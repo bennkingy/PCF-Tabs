@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="gmapControl" constructor="gmapControl" version="0.0.1" display-name-key="gmapControl" description-key="gmapControl description" control-type="standard">
+		<property name="controlValue" display-name-key="controlValue_Display_Key" description-key="controlValue_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/gmapControl.css" order="1" />
+    </resources>
+  </control>
+</manifest>
