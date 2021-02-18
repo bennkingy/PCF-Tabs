@@ -25,7 +25,6 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 	// Panels
 	private _panel1: HTMLDivElement;
 	private _panel2: HTMLDivElement;
-	Toggle: (toggleClass: any) => void;
 
 	// Constructor
 	constructor(){}
