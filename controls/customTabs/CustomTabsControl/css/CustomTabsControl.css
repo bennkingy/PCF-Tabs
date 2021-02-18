@@ -1,0 +1,31 @@
+.main-container {
+    font-family: arial, sans-serif;
+  }
+  .main-container .tabs {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    overflow: hidden;
+    height: 36px;
+    line-height: 36px;
+  }
+  .main-container .tabs .tab {
+    float: left;
+    background: white;
+    color: #777777;
+    height: 31px;
+    margin: 2px 8px 0;
+    padding: 0 8px;
+    cursor: pointer;
+  }
+  .main-container .tabs .tab.active {
+    color: #dd4b39;
+    border-bottom: 3px solid #dd4b39;
+  }
+  .main-container .panels .panel {
+    padding: 20px 10px;
+    display: none;
+  }
+  .main-container .panels .panel:first-child {
+    display: block;
+  }
+  

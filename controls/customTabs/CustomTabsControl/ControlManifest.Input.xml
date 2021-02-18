@@ -7,7 +7,7 @@
     <property name="samplePropertyPanel2" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
     <resources>
       <code path="index.ts" order="1"/>
-      <!-- <css path="css/CustomTabsControl.css" order="1" /> -->
+      <css path="css/CustomTabsControl.css" order="1" />
     </resources>
   </control>
 </manifest>

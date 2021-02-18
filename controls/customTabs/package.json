@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@types/node": "^10.12.18",
-    "@types/powerapps-component-framework": "^1.2.0"
+    "@types/powerapps-component-framework": "^1.2.0",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.5",
     "pcf-scripts": "^1",
     "pcf-start": "^1"
   }

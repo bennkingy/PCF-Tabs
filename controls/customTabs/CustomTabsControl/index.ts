@@ -1,4 +1,5 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
+import * as $ from "jquery";
 
 export class CustomTabsControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
@@ -24,6 +25,7 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 	// Panels
 	private _panel1: HTMLDivElement;
 	private _panel2: HTMLDivElement;
+	Toggle: (toggleClass: any) => void;
 
 	// Constructor
 	constructor(){}
@@ -51,9 +53,11 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 
 		// Create tabs
 		this._tab1 = document.createElement("div");
-		this._tab1.className = 'tab';
+		this._tab1.className = 'tab active';
+		this._tab1.setAttribute("data-tab", "tab-1");
 		this._tab2 = document.createElement("div");
 		this._tab2.className = 'tab';
+		this._tab2.setAttribute("data-tab", "tab-2");
 
 		// Create the panels container
 		this._containerPanels = document.createElement("div");
@@ -61,9 +65,11 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 
 		// Create panels
 		this._panel1 = document.createElement("div");
-		this._panel1.className = 'panel';
+		this._panel1.className = 'panel active';
+		this._panel1.id = 'tab-1';
 		this._panel2 = document.createElement("div");
 		this._panel2.className = 'panel';
+		this._panel2.id = 'tab-2';
 
 		// Gets value from control and puts into elements
 		this._value = context.parameters.samplePropertyTab1.raw;
@@ -90,6 +96,10 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 
 		// Append everything to main container
 		container.appendChild(this._container)
+
+		// Run jQuery for tab animation stuff
+		this.runJquery();
+
 	}
 
 	/**
@@ -126,5 +136,19 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 	public destroy(): void
 	{
 		// Add code to cleanup control if necessary
+	}
+
+	private runJquery() {
+		$(function(){
+			$('div.tabs div').on('click', function(){
+				var tab_id = $(this).attr('data-tab');
+		
+				$('div.tabs div').removeClass('active');
+				$('.panel').removeClass('active');
+		
+				$(this).addClass('active');
+				$("#"+tab_id).addClass('active');
+			})
+		})
 	}
 }
