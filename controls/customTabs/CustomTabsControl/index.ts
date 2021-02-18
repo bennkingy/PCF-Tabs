@@ -80,9 +80,6 @@ export class CustomTabsControl implements ComponentFramework.StandardControl<IIn
 		this._value4 = context.parameters.samplePropertyPanel2.raw;
 		this._panel2.innerText = this._value4;
 
-		console.log(this._containerPanels)
-		console.log(this._container)
-
 		// Append container divs
 		this._container.appendChild(this._containerTabs)
 		this._container.appendChild(this._containerPanels)
